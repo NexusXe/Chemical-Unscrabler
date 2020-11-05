@@ -1,3 +1,6 @@
+from mendeleev import element
+
+
 def RemoveFromList(thelist, val):
     return [value for value in thelist if value != val]
 
@@ -32,6 +35,7 @@ def Vect2Int(vect):
         f += wip
         pv += 4
     return f
+
     
 def Ints2Dic(dic):
     d = {}
@@ -46,26 +50,41 @@ def Ints2Dic(dic):
             d[Int] = [dic[i]]
     return d
         
+
+
+def Convert(string): 
+    li = list(string.split(" ")) 
+    return li
+
+def listToString(s):  
+    str1 = ""    
+    for ele in s:  
+        str1 += ele     
+    return str1 
+
 d = GetDic()
 ind = Ints2Dic(d)
 
-while True:
-    s = input("Enter Scrambbled Word Here: ")
-    v = Vect2Int(Word2Vect(s))
-    tp = ind.get(v, 'Word Not in Dictionary.')
-    print(tp)
-    if tp == 'Word Not in Dictionary.':
-        if input('Would you like to add it? [y/n]') == 'y' or input('Would you like to add it? [y/n]') == 'Y':
-            wta = str(input('What is the word you would like to add? '))
-            dicopen = open("DL.txt", "a")
-            dicopen.write('\n')
-            dicopen.write(wta)
-            dicopen.close()
-            d = GetDic()
-            ind = Ints2Dic(d)
-            print('Dictionary Updated')
-    if input('Restart? [y/n]') == 'y' or input('Restart? [y/n]') == 'Y':
-        pass
-    else:
-        break
 
+while True:
+    try:
+        wordScrambled = []
+        elementList = input('Enter element names as a list. >>')
+        elementList = elementList.title()
+        elementList = Convert(elementList)
+        # print(elementList)
+        for i in range(len(elementList)):
+            elementWanted = elementList[i]
+            elementWanted = element(str(elementWanted))
+            wordScrambled.append(elementWanted.symbol)
+        print(wordScrambled)
+        wordScrambled = listToString(wordScrambled)
+        # print(wordScrambled)
+        
+        s = wordScrambled
+        v = Vect2Int(Word2Vect(s))
+        tp = ind.get(v, 'Word Not in Dictionary.')
+        print(tp)
+        pass
+    except:
+        continue

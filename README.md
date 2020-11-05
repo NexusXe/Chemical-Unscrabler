@@ -1,19 +1,16 @@
-# Word-Unscrambler
-This python program outputs a list of the possible options a scrambled word could be.
-
-## About 
-This program was created by [Martin Chaperot-Merino](https://github.com/tinmarr)
+# Chemical-Unscrambler
+This python program outputs a list of the possible words that could be made with the symbols of input chemicals.
 
 # How to use
-1. Open the IDE: [http://word-unscrambler.tinmarr.repl.run/](http://word-unscrambler.tinmarr.repl.run/)
-2. Wait for the Prompt <br />
-![The code asks to enter a scrambled word](step1.png)
-3. Enter a scrambled word <br />
-![The entered word is lleho](step2.png)
-4. Hit enter <br />
-![The code return hello and asks if you want to restart](step3.png)
+1. Open the IDE: [https://Chemical-Unscrabler.nexussi14.repl.run/](https://Chemical-Unscrabler.nexussi14.repl.run/)
+2. Wait for the Prompt
 
-# How it works
+3. Enter a list of element names/symbols.
+
+4. Hit enter.
+
+
+# How the unscrabler works
 It takes words from a text file and uses a lookup function to find words with the same letters (where the order of words does not matter).
 
 ## The key to its speed
